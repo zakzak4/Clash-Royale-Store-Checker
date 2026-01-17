@@ -158,8 +158,8 @@ async def set_channel(ctx):
         f"📋 Channel ID: `{channel_id}`"
     )
 
-@bot.command(name='help')
-async def help_command(ctx):
+@bot.command(name='commands')
+async def commands_list(ctx):
     """Show all available commands"""
     embed = discord.Embed(
         title="🤖 Clash Royale Shop Bot - Commands",
@@ -186,7 +186,7 @@ async def help_command(ctx):
     )
     
     embed.add_field(
-        name="!help",
+        name="!commands",
         value="Show this help message",
         inline=False
     )
