@@ -204,5 +204,14 @@ async def commands_list(ctx):
     
     await ctx.send(embed=embed)
 
+@bot.command(name='getip')
+async def get_ip(ctx):
+    """Get Render's current IP address"""
+    try:
+        ip = requests.get('https://api.ipify.org').text
+        await ctx.send(f"🌐 **Render's Current IP:** `{ip}`\n\n⚠️ Add this IP to your Clash Royale API key at https://developer.clashroyale.com")
+    except:
+        await ctx.send("❌ Could not fetch IP address")
+
 if __name__ == "__main__":
     bot.run(DISCORD_TOKEN)
