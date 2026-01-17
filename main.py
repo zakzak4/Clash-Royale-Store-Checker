@@ -4,6 +4,15 @@ import aiohttp
 import os
 from datetime import datetime, time, timezone, timedelta
 import asyncio
+import requests
+
+# Print Render's IP address for API whitelisting
+try:
+    ip = requests.get('https://api.ipify.org').text
+    print(f"🌐 Render's current IP address: {ip}")
+    print(f"⚠️ Add this IP to your Clash Royale API key at https://developer.clashroyale.com")
+except:
+    print("Could not fetch IP")
 
 # Bot setup
 intents = discord.Intents.default()
